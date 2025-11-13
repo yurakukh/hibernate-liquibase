@@ -2,6 +2,10 @@ databaseChangeLog:
   - changeSet:
       id: create-countries-table
       author: yurakukh
+      preConditions:
+        - not:
+            tableExists:
+              tableName: countries
       changes:
         - createTable:
             tableName: countries

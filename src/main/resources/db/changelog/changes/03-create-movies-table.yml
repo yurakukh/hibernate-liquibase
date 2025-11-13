@@ -2,6 +2,10 @@ databaseChangeLog:
   - changeSet:
       id: create-movies-table
       author: yurakukh
+      preConditions:
+        - not:
+            tableExists:
+              tableName: movies
       changes:
         - createTable:
             tableName: movies
@@ -21,6 +25,10 @@ databaseChangeLog:
   - changeSet:
       id: create-movies-actors-table
       author: yurakukh
+      preConditions:
+        - not:
+            tableExists:
+              tableName: movies_actors
       changes:
         - createTable:
             tableName: movies_actors
