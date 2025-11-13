@@ -3,6 +3,7 @@ databaseChangeLog:
       id: create-movies-table
       author: yurakukh
       preConditions:
+        - onFail: MARK_RAN
         - not:
             tableExists:
               tableName: movies
